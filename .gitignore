@@ -1,3 +1,5 @@
-db
-cookbook
+.DS_Store
+db/
+cookbook/
 .ipynb_checkpoints/
+env.sh
