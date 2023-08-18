@@ -1,5 +1,6 @@
+__pycache__/
 .DS_Store
-db/
+documents/
 cookbook/
 .ipynb_checkpoints/
 env.sh
