@@ -1,6 +1,5 @@
 __pycache__/
 .DS_Store
-documents/
 cookbook/
 .ipynb_checkpoints/
 env.sh
