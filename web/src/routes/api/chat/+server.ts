@@ -1,3 +1,4 @@
+import { env } from '$env/dynamic/private';
 import { OPENAI_API_KEY, OPENAI_ORGANIZATION } from "$env/static/private";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 
@@ -14,7 +15,7 @@ export type MessageBody = {
 }
 
 const zepConfig = {
-    apiUrl: "http://localhost:8000", // the URL of your Zep implementation
+    apiUrl: env.ZEP_SERVER_URL ?? "http://localhost:8000", // the URL of your Zep implementation
     collectionName: "fever",  // the name of your collection. alphanum values only
     embeddingDimensions: 1536,  // much match the embeddings you're using
     isAutoEmbedded: true,  // will automatically embed documents when they are added
