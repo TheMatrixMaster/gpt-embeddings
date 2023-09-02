@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@getzep/zep-js':
-    specifier: ^0.7.0
-    version: 0.7.0
+    specifier: ^0.7.1
+    version: 0.7.1
   '@stefanprobst/rehype-shiki':
     specifier: ^2.2.1
     version: 2.2.1(shiki@0.14.4)
@@ -33,8 +33,8 @@ devDependencies:
     specifier: ^10.4.15
     version: 10.4.15(postcss@8.4.29)
   langchain:
-    specifier: ^0.0.139
-    version: 0.0.139(@getzep/zep-js@0.7.0)
+    specifier: ^0.0.140
+    version: 0.0.140(@getzep/zep-js@0.7.1)
   postcss:
     specifier: ^8.4.29
     version: 8.4.29
@@ -313,8 +313,8 @@ packages:
     dev: true
     optional: true
 
-  /@getzep/zep-js@0.7.0:
-    resolution: {integrity: sha512-Mf2/E6xb+10byUUAJm/EPOekoOH/AE+ayrUmo9g+nosD3oFcCIdb5froctd8cvA3+QxQfSXbThDV8tgg45gSxg==}
+  /@getzep/zep-js@0.7.1:
+    resolution: {integrity: sha512-Rv3Is1Ozo9eklO/z126ZXIHyJi6lhL7Ev4KS/bdF2C39Yl2NWuueP0uRCNfcvOtljuNYBC6UWRk5XzhgfodDVg==}
     dependencies:
       semver: 7.5.4
       typescript: 5.2.2
@@ -1507,8 +1507,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /langchain@0.0.139(@getzep/zep-js@0.7.0):
-    resolution: {integrity: sha512-cd0eQipIqt9mnU7K9r4kYxAMCMkM6GQ6rubteUo8WfkcR5biepeuoPhxQb9Lnd/kKg7Oo628JrdRItk5DJSrLQ==}
+  /langchain@0.0.140(@getzep/zep-js@0.7.1):
+    resolution: {integrity: sha512-xr7ETbbjDVhAaJmqU61w0r8r4eFKokjvlCo0gh0EGBLQqRyHtMn1XT6Jdi9QugJviQrNfA2BECm9bYK0aY3usQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@aws-crypto/sha256-js': ^5.0.0
@@ -1565,7 +1565,6 @@ packages:
       ignore: ^5.2.0
       ioredis: ^5.3.2
       jsdom: '*'
-      langchainhub: ~0.0.3
       mammoth: '*'
       mongodb: ^5.2.0
       mysql2: ^3.3.3
@@ -1698,8 +1697,6 @@ packages:
         optional: true
       jsdom:
         optional: true
-      langchainhub:
-        optional: true
       mammoth:
         optional: true
       mongodb:
@@ -1748,7 +1745,7 @@ packages:
         optional: true
     dependencies:
       '@anthropic-ai/sdk': 0.6.2
-      '@getzep/zep-js': 0.7.0
+      '@getzep/zep-js': 0.7.1
       ansi-styles: 5.2.0
       binary-extensions: 2.2.0
       camelcase: 6.3.0
@@ -1758,7 +1755,8 @@ packages:
       js-tiktoken: 1.0.7
       js-yaml: 4.1.0
       jsonpointer: 5.0.1
-      langsmith: 0.0.32
+      langchainhub: 0.0.6
+      langsmith: 0.0.33
       ml-distance: 4.0.1
       object-hash: 3.0.0
       openai: 3.3.0
@@ -1774,8 +1772,12 @@ packages:
       - encoding
     dev: true
 
-  /langsmith@0.0.32:
-    resolution: {integrity: sha512-Q9Ozp14Q4IV7iqDs3xlHl8uL9ZjmQ5WOdXQJKE+Zmv2L/M8oePU8N9uClNKCTjtJbYLXgCAVan4erWXSX4qK3Q==}
+  /langchainhub@0.0.6:
+    resolution: {integrity: sha512-SW6105T+YP1cTe0yMf//7kyshCgvCTyFBMTgH2H3s9rTAR4e+78DA/BBrUL/Mt4Q5eMWui7iGuAYb3pgGsdQ9w==}
+    dev: true
+
+  /langsmith@0.0.33:
+    resolution: {integrity: sha512-8dVBjJsuIwsnUFtA6OJ85k2wWzpka+LsF2EFzpzpF3yOHO/Ui7oeCMobyp6L7QcgWIBdRUIJY6sNSxAW0uAMHg==}
     hasBin: true
     dependencies:
       '@types/uuid': 9.0.3

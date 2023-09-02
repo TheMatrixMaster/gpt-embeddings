@@ -3,7 +3,10 @@ import { OPENAI_API_KEY, OPENAI_ORGANIZATION } from "$env/static/private";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 
 import { ConversationalRetrievalQAChain } from "langchain/chains";
+
 import { ZepVectorStore } from "langchain/vectorstores/zep";
+import type { IZepConfig } from "langchain/vectorstores/zep";
+
 import { FakeEmbeddings } from "langchain/embeddings/fake";
 import { BufferMemory } from "langchain/memory";
 
@@ -14,11 +17,9 @@ export type MessageBody = {
     settings: { temperature: number, relatedness: number };
 }
 
-const zepConfig = {
+const zepConfig: IZepConfig = {
     apiUrl: env.ZEP_SERVER_URL ?? "http://localhost:8000", // the URL of your Zep implementation
     collectionName: "fever",  // the name of your collection. alphanum values only
-    embeddingDimensions: 1536,  // much match the embeddings you're using
-    isAutoEmbedded: true,  // will automatically embed documents when they are added
 };
 
 const CUSTOM_QUESTION_GENERATOR_CHAIN_PROMPT = `
@@ -83,7 +84,10 @@ export const POST = async ({ request }) => {
 
             const chain = ConversationalRetrievalQAChain.fromLLM(
                 streamingModel,
-                vectorStore.asRetriever(),
+                vectorStore.asRetriever({
+                    vectorStore: vectorStore,
+                    verbose: true,
+                }),
                 {
                     memory: new BufferMemory({
                         memoryKey: "chat_history", // Must be set to "chat_history"
